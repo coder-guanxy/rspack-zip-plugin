@@ -1,5 +1,5 @@
 {
-  "name": "rspack-zip",
+  "name": "rspack-zip-plugin",
   "version": "0.0.1",
   "description": "rspack zip plugin",
   "main": "index.js",

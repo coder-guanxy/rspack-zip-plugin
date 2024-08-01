@@ -1,17 +1,17 @@
-# webpack-zip
+# rspack-zip
 it is a simple webpcak plugin for zip bundle folder to designation path
 
 
-(用于将webpack输出文件夹打包为zip压缩包,并输送到指定目录下的插件)
+(用于将rspack输出文件夹打包为zip压缩包,并输送到指定目录下的插件)
 
 #### Instructions
 
 
-`npm i webpack-zip`
+`npm i rspack-zip -D`
 
 
 ```javascript
-var zip = require('webpack-zip');
+var zip = require('rspack-zip');
 ...
 plugins: [
   new zip()
@@ -22,14 +22,14 @@ plugins: [
 
 - `destPath` the designation path .default:Root directory  
 - `onError`the function deal error
-- `onSuccess`the function deal success
+- `onFinish`the function deal finish
 
 
  ```javascript
   new zip(
     {
         destPath:'//path/dist.zip',
-        handleError:(e)=>{}
+        onError: (e)=>{}
     }
   )
 ```

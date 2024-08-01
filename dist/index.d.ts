@@ -4,12 +4,12 @@ export interface RspackZipOption {
     noZip?: boolean;
     clean?: boolean;
     onError?: (e: Error) => void;
-    onSuccess?: (path: string) => void;
+    onFinish?: (path: string) => void;
 }
 export declare class RspackZipPlugin implements RspackPluginInstance {
     private destPath;
     private handleError;
-    private handleSuccess;
+    private handleFinish;
     private targetPath;
     private noZip;
     private clean;

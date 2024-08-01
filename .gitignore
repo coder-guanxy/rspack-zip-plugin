@@ -1,1 +1,7 @@
-node_modules
+/node_modules
+/dist
+
+/example/node_modules
+/example/dist
+
+example/build.zip

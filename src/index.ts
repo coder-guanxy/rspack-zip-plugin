@@ -14,20 +14,20 @@ export interface RspackZipOption {
     noZip?: boolean,
     clean?: boolean,
     onError?: (e: Error) => void,
-    onSuccess?: (path: string) => void
+    onFinish?: (path: string) => void
 }
 
 export class RspackZipPlugin implements RspackPluginInstance {
     private destPath: string;
-    private handleError: RspackZipOption["onError"];
-    private handleSuccess: RspackZipOption["onSuccess"];
+    private handleError: NonNullable<RspackZipOption["onError"]>;
+    private handleFinish: NonNullable<RspackZipOption["onFinish"]>;
     private targetPath = "";
     private noZip: boolean;
     private clean: boolean;
     constructor(options: RspackZipOption = {}) {
         this.destPath = options.destPath ?? PathJoin(process.cwd(), "./dist.zip");
         this.handleError = options.onError ?? defaultHandleError;
-        this.handleSuccess = options.onSuccess ?? defaultHandleSuccess!;
+        this.handleFinish = options.onFinish ?? defaultHandleFinish!;
         this.noZip = options.noZip ?? false;
         this.clean = options.clean || true;
     }
@@ -41,7 +41,6 @@ export class RspackZipPlugin implements RspackPluginInstance {
                 rimrafSync(this.destPath)
             }
 
-
             if (this.noZip) {
                 copyFolder(this.targetPath, this.destPath)
             } else {
@@ -54,10 +53,10 @@ export class RspackZipPlugin implements RspackPluginInstance {
         const zipStream = new zip.Stream();
         zipStream.addEntry(from);
         zipStream
-            .on("error", this.handleError!)
+            .on("error", this.handleError)
             .pipe(createWriteStream(to))
-            .on("error", this.handleError!)
-            .on("close", () => this.handleSuccess!(to))
+            .on("error", this.handleError)
+            .on("finish", () => this.handleFinish(to))
 
     }
 }
@@ -68,7 +67,7 @@ const defaultHandleError = (e: Error) => {
     )
 }
 
-const defaultHandleSuccess = (path: string) => {
+const defaultHandleFinish = (path: string) => {
     stream.write(
         chalk.green.bold("zip is success in  " + path + "\n\n")
     )

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = copyFolder;
 const fs_1 = require("fs");
 const path_1 = require("path");
 const createDir = fs_1.mkdirSync;
@@ -32,4 +33,3 @@ function copyFolder(copiedPath, targetPath) {
         console.log('do not exist path: ', copiedPath);
     }
 }
-exports.default = copyFolder;
