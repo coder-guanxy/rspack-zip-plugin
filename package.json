@@ -1,6 +1,7 @@
 {
   "name": "rspack-zip-plugin",
   "version": "0.0.1",
+  "private": true,
   "description": "rspack zip plugin",
   "main": "index.js",
   "scripts": {
@@ -8,8 +9,12 @@
     "build": "tsc -b"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "coder_guan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-guanxy/rspackZipPlugin"
+  },
+  "license": "MIT",
   "dependencies": {
     "chalk": "4.0.0",
     "compressing": "1.10.1",
