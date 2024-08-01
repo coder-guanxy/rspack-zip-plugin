@@ -1,0 +1,12 @@
+{
+  "name": "rspack-zip-plugin-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build"
+  },
+  "devDependencies": {
+    "@rspack/cli": "latest"
+  }
+}
