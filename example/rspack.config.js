@@ -9,7 +9,8 @@ module.exports = {
   },
   plugins: [
     new RspackZipPlugin({
-      destPath: "./build.zip"
+      destPath: "./build.zip",
+      noZip: false, // true: just copy build folder
     }),
   ],
   module: {

@@ -1,6 +1,6 @@
 {
   "name": "rspack-zip-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "rspack zip plugin",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "dev": "tsc -w",
     "build": "tsc -b"
   },
-  "keywords": [],
+  "keywords": ["rspack", "zip", "dist", "plugin"],
   "author": "coder_guan",
   "repository": {
     "type": "git",

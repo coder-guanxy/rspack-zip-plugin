@@ -1,1 +1,0 @@
-{"version":3,"file":"main.js","sources":["webpack://rspack-zip-plugin-example/./src/B/index.js","webpack://rspack-zip-plugin-example/./src/index.js"],"sourcesContent":["export const B = \"D\";","import {B} from \"./B\"\nconst A = \"A\";\nconsole.log(A, B)"],"names":["B","console","log"],"mappings":"8EAAO,IAAMA,EAAI,G,+TCEjBC,QAAQC,GAAG,CADD,IACK,EAAAF,CAAC,C"}

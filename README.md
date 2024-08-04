@@ -16,7 +16,7 @@ var RspackZipPlugin = require('rspack-zip-plugin');
 ...
 plugins: [
   new RspackZipPlugin({
-    destPath:'//path/dist.zip'
+    destPath:'/dist.zip' // Compress the packaging results
   })
 ]
 ```
@@ -27,3 +27,10 @@ plugins: [
 - `onError`the function deal error
 - `onFinish`the function deal finish
 - `noZip` just copy
+
+| name | type | default | description |
+| --- | --- | --- | --- |
+| destPath | string | `/dist.zip` | Compress the packaging results |
+| onError |  function | noop | Executed when the packaging error is performed |
+| onFinish |  function | noop | The package is executed |
+| noZip |  boolean | false | true: just copy with destPath option |
